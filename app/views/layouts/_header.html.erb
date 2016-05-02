@@ -11,25 +11,25 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="/windows"><img src="/assets/window.png" alt="Windows" height="24px"> Fenêtres</a></li>
+        <li><a href="/windows"><%= image_tag("window.png", alt: "Windows", width: '24') %> Fenêtres</a></li>
         <li class="dropdown">
-          <a href="#"><img src="/assets/porte.png" alt="Doors" height="24px"> Portes <b class="caret"></b></a>
+          <a href="#"><%= image_tag("porte.png", alt: "Doors", height: '24') %> Portes <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="/doors">Portes d'entrée</a></li>
             <li><a href="/garages">Portes de garage</a></li>
             <li><a href="/portals">Portails</a></li>
           </ul>
         </li>
-        <li><a href="/shutters"><img src="/assets/volet.png" alt="Shutters" height="24px"> Volets</a></li>
-        <li><a href="/stores"><img src="/assets/store.png" alt="Stores" height="24px"> Stores</a></li>
-        <li><a href="/contacts"><img src="/assets/contact.png" alt="Contact" height="24px"> Contact</a></li>
+        <li><a href="/shutters"><%= image_tag("volet.png", alt: "Shutters", width: '24') %> Volets</a></li>
+        <li><a href="/stores"><%= image_tag("store.png", alt: "Stores", width: '24') %> Stores</a></li>
+        <li><a href="/contacts"><%= image_tag("contact.png", alt: "Contact", width: '24') %> Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nopadding"><a href="http://facebook.lainefermetures.com" target="_blank"><img src="/assets/facebook.png" alt="Facebook"></a></li>
-        <li class="nopadding"><img src="/assets/bubendorff.png" alt="Bubendorff"></li>
-        <li class="nopadding"><img src="/assets/rge.png" alt="RGE"></li>
-        <li class="nopadding"><img src="/assets/artisan.png" alt="Artisan"></li>
-        <li class="nopadding"><a href="https://www.winsol.fr" target="_blank"><img src="/assets/winsol.png" alt="Winsol"></a></li>
+        <li class="nopadding"><%= image_tag("bubendorff.png", alt: "Bubendorff") %></li>
+        <li class="nopadding"><%= image_tag("rge.png", alt: "RGE") %></li>
+        <li class="nopadding"><%= image_tag("artisan.png", alt: "Artisan") %></li>
+        <li class="nopadding"><a href="https://www.winsol.fr" target="_blank"><%= image_tag("winsol.png", alt: "Winsol") %></a></li>
       </ul>
   </div>
 </nav>
