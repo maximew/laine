@@ -1,0 +1,14 @@
+<h1 class="text-center">Fenêtres</h1>
+
+<section class="row pager">
+    <%= link_to 'Toutes', fetch_windows_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
+    <% @categories.each do |category| %>
+      <%= link_to category.libelle, fetch_windows_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
+    <% end %>
+</section>
+
+<hr>
+
+<div id="windows" class="transitions-enabled infinite-scroll clearfix centered content">
+  <%= render partial: 'windows', locals: { windows: @windows} %>
+</div>

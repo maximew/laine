@@ -1,0 +1,29 @@
+<h1 class="text-center">Volets</h1>
+
+<%= render 'admin/links' %>
+
+<hr>
+
+<%= link_to 'Nouveau volet', new_admin_shutter_path, class: 'btn btn-lg btn-success center-block' %>
+
+<% @shutters.each do |shutter| %>
+	<div class="media">
+	  <div class="media-left">
+	      <%= image_tag shutter.image.url(:small) %>
+	  </div>
+	  <div class="media-body">
+	  	<h2><%= shutter.category.libelle %></h2>
+	  	<table class="table">
+		  	<tr>
+	        	<td><%= link_to 'Modifier', edit_admin_shutter_path(shutter), class: 'btn btn-default' %></td>
+	        	<td><%= link_to 'Supprimer', admin_shutter_path(shutter), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        	</tr>
+	  	</table>
+	    
+		
+	  </div>
+	</div>
+<% end %>
+
+<br><br>
+<%= link_to 'Retour', admin_index_path, class: 'btn btn-lg btn-primary center-block' %>

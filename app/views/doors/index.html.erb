@@ -1,0 +1,14 @@
+<h1 class="text-center">Portes d'entrée</h1>
+
+<section class="row pager">
+    <%= link_to 'Toutes', fetch_doors_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
+    <% @categories.each do |category| %>
+      <%= link_to category.libelle, fetch_doors_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
+    <% end %>
+</section>
+
+<hr>
+
+<div id="doors" class="transitions-enabled infinite-scroll clearfix centered content">
+  <%= render partial: 'doors', locals: { doors: @doors} %>
+</div>

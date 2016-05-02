@@ -1,0 +1,35 @@
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag("logo.png", :alt =>  "Lainé Fermetures", :class =>"navbar-brand"), root_path, class: "navbar-brand" %>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/windows"><img src="/assets/window.png" alt="Windows" height="24px"> Fenêtres</a></li>
+        <li class="dropdown">
+          <a href="#"><img src="/assets/porte.png" alt="Doors" height="24px"> Portes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/doors">Portes d'entrée</a></li>
+            <li><a href="/garages">Portes de garage</a></li>
+            <li><a href="/portals">Portails</a></li>
+          </ul>
+        </li>
+        <li><a href="/shutters"><img src="/assets/volet.png" alt="Shutters" height="24px"> Volets</a></li>
+        <li><a href="/stores"><img src="/assets/store.png" alt="Stores" height="24px"> Stores</a></li>
+        <li><a href="/contacts"><img src="/assets/contact.png" alt="Contact" height="24px"> Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nopadding"><a href="http://facebook.lainefermetures.com" target="_blank"><img src="/assets/facebook.png" alt="Facebook"></a></li>
+        <li class="nopadding"><img src="/assets/bubendorff.png" alt="Bubendorff"></li>
+        <li class="nopadding"><img src="/assets/rge.png" alt="RGE"></li>
+        <li class="nopadding"><img src="/assets/artisan.png" alt="Artisan"></li>
+        <li class="nopadding"><a href="https://www.winsol.fr" target="_blank"><img src="/assets/winsol.png" alt="Winsol"></a></li>
+      </ul>
+  </div>
+</nav>

@@ -1,0 +1,5 @@
+<% @garages.each do |garage| %>
+  <div id="grid">
+    <%= image_tag garage.image.url(:medium) %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h1 class="text-center">Portes de garage</h1>
+
+<%= render 'admin/links' %>
+
+<hr>
+
+<%= link_to 'Nouvelle porte', new_admin_garage_path, class: 'btn btn-lg btn-success center-block' %>
+
+<% @garages.each do |garage| %>
+	<div class="media">
+	  <div class="media-left">
+	      <%= image_tag garage.image.url(:small) %>
+	  </div>
+	  <div class="media-body">
+	  	<h2><%= garage.category.libelle %></h2>
+	  	<table class="table">
+		  	<tr>
+	        	<td><%= link_to 'Modifier', edit_admin_garage_path(garage), class: 'btn btn-default' %></td>
+	        	<td><%= link_to 'Supprimer', admin_garage_path(garage), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        	</tr>
+	  	</table>
+	    
+		
+	  </div>
+	</div>
+<% end %>
+
+<br><br>
+<%= link_to 'Retour', admin_index_path, class: 'btn btn-lg btn-primary center-block' %>

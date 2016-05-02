@@ -1,0 +1,29 @@
+<h1 class="text-center">Fenêtres</h1>
+
+<%= render 'admin/links' %>
+
+<hr>
+
+<%= link_to 'Nouvelle fenêtre', new_admin_window_path, class: 'btn btn-lg btn-success center-block' %>
+
+<% @windows.each do |window| %>
+	<div class="media">
+	  <div class="media-left">
+	      <%= image_tag window.image.url(:small) %>
+	  </div>
+	  <div class="media-body">
+	  	<h2><%= window.category.libelle %></h2>
+	  	<table class="table">
+		  	<tr>
+	        	<td><%= link_to 'Modifier', edit_admin_window_path(window), class: 'btn btn-default' %></td>
+	        	<td><%= link_to 'Supprimer', admin_window_path(window), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        	</tr>
+	  	</table>
+	    
+		
+	  </div>
+	</div>
+<% end %>
+
+<br><br>
+<%= link_to 'Retour', admin_index_path, class: 'btn btn-lg btn-primary center-block' %>
