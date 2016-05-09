@@ -7,10 +7,9 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-      flash.now[:success] = 'Votre message a bien été envoyé, merci de nous avoir contacté.'
+      redirect_to(contacts_url, success: 'Votre message a bien été envoyé, merci de nous avoir contacté.')
     else
-      flash.now[:danger] = 'Une erreur est survenue lors de l\'envoie du message.'
-      render :new
+      redirect_to(contacts_url, danger: 'Une erreur est survenue lors de l\'envoie du message.')
     end
   end
 end

@@ -1,4 +1,5 @@
 class Admin::GaragesController < ApplicationController
+  before_filter :authenticate
   before_action :set_garage, only: [:edit, :update, :destroy]
 
   # GET /garages
@@ -70,6 +71,14 @@ class Admin::GaragesController < ApplicationController
         format.js
     end
   end
+
+  protected
+    # Authentication to admin part
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == ENV["ADMIN_USERNAME"] && password == ENV["ADMIN_PASSWORD"]
+      end
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

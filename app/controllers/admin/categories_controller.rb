@@ -1,4 +1,5 @@
 class Admin::CategoriesController < ApplicationController
+  before_filter :authenticate
   before_action :set_category, only: [:edit, :update, :destroy]
 
   # GET /categories
@@ -67,6 +68,14 @@ class Admin::CategoriesController < ApplicationController
     "#{libelle}"
 
   end
+
+  protected
+    # Authentication to admin part
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == ENV["ADMIN_USERNAME"] && password == ENV["ADMIN_PASSWORD"]
+      end
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.
