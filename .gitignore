@@ -40,6 +40,7 @@ log/development.log
 /config/database.yml
 /config/secrets.yml
 Gemfile
+Gemfile.lock
 config/environments/development.rb
 
 log/development.log
