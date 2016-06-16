@@ -73,7 +73,7 @@ class Admin::CategoriesController < ApplicationController
     # Authentication to admin part
     def authenticate
       authenticate_or_request_with_http_basic do |username, password|
-        username == ENV["ADMIN_USERNAME"] && password == ENV["ADMIN_PASSWORD"]
+        username == 'laine' && password == 'TITEUFCYRIL'
       end
     end
 
