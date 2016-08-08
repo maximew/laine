@@ -11,18 +11,18 @@
     </div> <!-- end div class="navbar-header" -->
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="/windows"><%= image_tag("window.png", alt: "Windows", width: '24') %> Fenêtres</a></li>
-        <li class="dropdown">
-          <a href="#"><%= image_tag("porte.png", alt: "Doors", height: '24') %> Portes <b class="caret"></b></a>
+        <li class="windows"><a href="/windows"><span class="pont bleu">D</span> Fenêtres</a></li>
+        <li class="dropdown doors garages portals">
+          <a href="#"><span class="pont rouge">D</span> Portes <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="/doors">Portes d'entrée</a></li>
             <li><a href="/garages">Portes de garage</a></li>
             <li><a href="/portals">Portails</a></li>
           </ul>
         </li>
-        <li><a href="/shutters"><%= image_tag("volet.png", alt: "Shutters", width: '24') %> Volets</a></li>
-        <li><a href="/stores"><%= image_tag("store.png", alt: "Stores", width: '24') %> Stores</a></li>
-        <li><a href="/contacts"><%= image_tag("contact.png", alt: "Contact", width: '24') %> Contact</a></li>
+        <li class="shutters"><a href="/shutters"><span class="pont vert">D</span> Volets</a></li>
+        <li class="stores"><a href="/stores"><span class="pont jaune">D</span> Stores</a></li>
+        <li class="contacts"><a href="/contacts"><%= image_tag("contact.png", alt: "Contact", width: '16') %> Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="nopadding"><%= image_tag("artisan.png", alt: "Artisan") %></li>
@@ -33,4 +33,4 @@
       </ul>
     </div> <!-- end div class="collapse navbar-collapse" -->
   </div> <!-- end div class="container" -->
-</div> <!-- end div class="navbar navbar-default navbar-fixed-top" -->
+</div>

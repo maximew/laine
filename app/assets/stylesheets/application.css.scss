@@ -5,6 +5,13 @@
 @import 'masonry/gutters';
 @import 'masonry/transitions';
 
+@font-face {
+  font-family: 'LAINE';
+  src:font-url('LAINE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*********************************************/
 /*                  GENERAL                  */
 /*********************************************/
@@ -17,11 +24,35 @@ body{
   	padding-top: 100px;
 }
 
+.jumbotron{
+	padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.head {
+  color: white;
+  padding-bottom: 15px;
+}
+
+#accueil{
+	padding-left: 60px;
+    padding-right: 60px;
+}
+
+#contact{
+	padding-left: 60px;
+    padding-right: 60px;
+}
+
+.contacts{
+	padding-top: 16px !important;
+}
+
 .black{color:#444;}
 .bleu{color:#0c49a6;}
 .rouge{color:#d40015;}
 .vert{color:#abd11a;}
-.jaune{color:#fff221;}
+.jaune{color:#e5e515;}
 .gris{color:#787878;}
 .btn-gray{color: #fff;background-color: #787878;border-color: #787878;}
 .vcenter {
@@ -29,9 +60,12 @@ body{
     vertical-align: middle;
     float: none;
 }
+.pont{
+	font-family:LAINE;
+}
 
-.jumbotron{
-	background-color: rgba(251, 252, 250, 0.9);
+.big{
+	font-size:xx-large;
 }
 
 .nopadding{
@@ -49,13 +83,74 @@ body{
 /*********************************************/
 /*                  HEADER                   */
 /*********************************************/
+.doorsdropdown{
+	color:#d40015 !important;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white !important;
+}
+.activewindows {
+	border-bottom: 2px solid #0c49a6;
+}
+.activedoors, .activegarages, .activeportals {
+	border-bottom: 2px solid #d40015;
+}
+.activeshutters {
+	border-bottom: 2px solid #abd11a;
+}
+.activestores {
+	border-bottom: 2px solid #FFFF00;
+}
+.activecontacts {
+	border-bottom: 2px solid #787878;
+}
+li.windows:hover{
+	border-bottom: 2px solid #0c49a6;
+}
+li.windows > a:hover, li.windows > a:hover, li.windows > a.active{
+	color:#0c49a6 !important;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+li.doors:hover{
+	border-bottom: 2px solid #d40015;
+}
+li.doors > a:hover, li.doors > a:hover, li.doors > a.active{
+	color:#d40015 !important;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+li.shutters:hover{
+	border-bottom: 2px solid #abd11a;
+}
+li.shutters > a:hover, li.shutters > a:hover, li.shutters > a.active{
+	color:#abd11a !important;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+li.stores:hover{
+	border-bottom: 2px solid #FFFF00;
+}
+li.stores > a:hover, li.stores > a:hover, li.stores > a.active{
+	color:#e5e515 !important;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+li.contacts:hover{
+	border-bottom: 2px solid #787878;
+}
+li.contacts > a:hover, li.contacts > a:hover, li.contacts > a.active{
+	color:#787878 !important;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
 li.dropdown:hover .dropdown-menu{display:block;border-radius: 6px;}
 
 .navbar{
 	background: rgba(251, 252, 250, 0.9);
-	border-bottom: 1px #787878 solid;
-    padding-bottom: 10px;
-    padding-top: 10px;
+}
+
+ul.nav.navbar-nav > li {
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 @media (max-width: 768px){
@@ -111,6 +206,14 @@ li.dropdown:hover .dropdown-menu{display:block;border-radius: 6px;}
 	.navbar-brand {
 	    padding: 0;
 	    margin-left: 0px;
+	    margin-top: 5px;
+	}
+
+	.navbar-nav {
+	    box-sizing: border-box;
+	}
+	.navbar{
+		height: 76px;
 	}
 }
 /*********************************************/

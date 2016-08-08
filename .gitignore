@@ -36,14 +36,24 @@ build/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-log/development.log
 /config/database.yml
 /config/secrets.yml
 Gemfile
-config/environments/development.rb
+/config/environments/development.rb
 
-log/development.log
-
-log/development.log
+/log/*
+/public/system/*
 
 *.log
+
+app/models/contact.rb
+/conf/
+/config/database.yml
+/config/secrets.yml
+Gemfile
+Gemfile.lock
+config/environments/*
+log/*
+
+*.log
+/public/
