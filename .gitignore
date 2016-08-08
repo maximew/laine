@@ -10,8 +10,8 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
-/public/system
-/public/assets
+/public/system/
+/public/assets/
 ## Specific to RubyMotion:
 .dat*
 .repl_history
@@ -37,15 +37,6 @@ build/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-/config/database.yml
-/config/secrets.yml
-Gemfile
-/config/environments/development.rb
-
-/log/*
-
-*.log
-
 app/models/contact.rb
 /conf/
 /config/database.yml
@@ -54,5 +45,4 @@ Gemfile
 Gemfile.lock
 config/environments/*
 log/*
-
 *.log
