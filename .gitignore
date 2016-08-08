@@ -10,6 +10,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/public/system
 
 ## Specific to RubyMotion:
 .dat*
@@ -42,7 +43,6 @@ Gemfile
 /config/environments/development.rb
 
 /log/*
-/public/system/*
 
 *.log
 
@@ -56,4 +56,3 @@ config/environments/*
 log/*
 
 *.log
-/public/
