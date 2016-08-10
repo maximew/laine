@@ -41,6 +41,5 @@ app/models/contact.rb
 /config/secrets.yml
 Gemfile
 Gemfile.lock
-config/environments/*
 log/*
 *.log
