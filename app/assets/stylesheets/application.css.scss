@@ -4,13 +4,8 @@
 @import 'masonry/fluid';
 @import 'masonry/gutters';
 @import 'masonry/transitions';
-
-@font-face {
-  font-family: 'LAINE';
-  src:font-url('LAINE.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import 'slick';
+@import 'slick-theme';
 
 /*********************************************/
 /*                  GENERAL                  */
@@ -32,6 +27,7 @@ body{
 .head {
   color: white;
   padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 #accueil{
@@ -60,9 +56,6 @@ body{
     vertical-align: middle;
     float: none;
 }
-.pont{
-	font-family:LAINE;
-}
 
 .big{
 	font-size:xx-large;
@@ -78,6 +71,11 @@ body{
 	padding-right: 0px !important;
 	padding-bottom: 0px !important;
 	padding-left: 0px !important;
+}
+
+.slick{	
+	background-color: #eeeeee;
+	border-radius: 6px;
 }
 
 /*********************************************/
@@ -149,8 +147,8 @@ li.dropdown:hover .dropdown-menu{display:block;border-radius: 6px;}
 }
 
 ul.nav.navbar-nav > li {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 8px !important;
+    padding-bottom: 16px;
 }
 
 @media (max-width: 768px){

@@ -1,46 +1,59 @@
-<div id="accueil" class="row">
-	<h3>Lainé Fermetures</h3>
+<div class="slick">
+	<% @agendas.each do |agenda| %>
+		<% if ((DateTime.now.to_date >= agenda.startdate) && (DateTime.now.to_date <= agenda.enddate)) %>
+			<div class="text-center">
+				<h4><%= agenda.title %></h4>
+				<p><%= agenda.content.html_safe %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>
 
-	<div class="col-md-8">
-		<br>
-		Bienvenue sur le site de LAINÉ Fermetures Amiens. 
-		<br><br>
-		Un projet d’aménagement ou de rénovation ? Consultez nous pour l'installation de vos fenêtres, portes, volets roulants, porte de garage, portail (PVC ou Aluminium).
-		<br><br>
-		Depuis 1990, nous sommes à votre service pour vous accompagner dans la réalisation de vos projets sur Amiens et dans toute la Somme.
-		<br><br>
-		Nous sommes également Reconnu Garant de l’Environnement grâce à la certification RGE Qualibat.
-		<br><br>
-		<strong><u>Notre objectif :</u></strong><br>
-		Faire de votre habitation un espace de confort, agréable à vivre.
-		<br><br>
-		<div class="col-xs-4">
-			<address class="text-center">
-			  <h2 class="bleu glyphicon glyphicon-pushpin"></h2><br>
-			  <strong>Adresse</strong><br>
-			  55 Avenue du Général Foy<br>
-			  Amiens, 80 000<br>
-			</address>
+<div class="jumbotron">
+	<div id="accueil" class="row">
+		<h3>Lainé Fermetures</h3>
+
+		<div class="col-md-8">
+			<br>
+			Bienvenue sur le site de LAINÉ Fermetures Amiens. 
+			<br><br>
+			Un projet d’aménagement ou de rénovation ? Consultez nous pour l'installation de vos fenêtres, portes, volets roulants, porte de garage, portail (PVC ou Aluminium).
+			<br><br>
+			Depuis 1990, nous sommes à votre service pour vous accompagner dans la réalisation de vos projets sur Amiens et dans toute la Somme.
+			<br><br>
+			Nous sommes également reconnus Garants de l’Environnement grâce à la certification RGE Qualibat.
+			<br><br>
+			<strong><u>Notre objectif :</u></strong><br>
+			Faire de votre habitation un espace de confort, agréable à vivre.
+			<br><br>
+			<div class="col-xs-4">
+				<address class="text-center">
+				  <h2 class="bleu glyphicon glyphicon-pushpin"></h2><br>
+				  <strong>Adresse</strong><br>
+				  55 Avenue du Général Foy<br>
+				  Amiens, 80 000<br>
+				</address>
+			</div>
+			<div class="col-xs-4">
+				<address class="text-center">
+				  <h2 class="rouge glyphicon glyphicon-earphone"></h2><br>
+				  <strong>Téléphone</strong>
+				  <br>
+				  <a href="tel:0322955685">03.22.95.56.85</a>
+				</address>
+			</div>
+			<div class="col-xs-4">
+				<address class="text-center">
+				  <h2 class="vert glyphicon glyphicon-envelope"></h2><br>
+				  <strong>Mail</strong>
+				  <br>
+				  <a href="mailto:lainefermetures@sfr.fr">lainefermetures@sfr.fr</a>
+				</address>
+			</div>
 		</div>
-		<div class="col-xs-4">
-			<address class="text-center">
-			  <h2 class="rouge glyphicon glyphicon-earphone"></h2><br>
-			  <strong>Téléphone</strong>
-			  <br>
-			  <a href="tel:0322955685">03.22.95.56.85</a>
-			</address>
-		</div>
-		<div class="col-xs-4">
-			<address class="text-center">
-			  <h2 class="vert glyphicon glyphicon-envelope"></h2><br>
-			  <strong>Mail</strong>
-			  <br>
-			  <a href="mailto:lainefermetures@sfr.fr">lainefermetures@sfr.fr</a>
-			</address>
-		</div>
+
+		<div class="col-md-4">
+		  	<%= image_tag("vitrine.jpg", :alt =>  "Lainé Fermetures", :width => '300px') %>
+	  	</div>
 	</div>
-
-	<div class="col-md-4">
-	  	<%= image_tag("vitrine.jpg", :alt =>  "Lainé Fermetures", :width => '300px') %>
-  	</div>
 </div>

@@ -1,16 +1,18 @@
-<div class="head big text-center" style="background-color:#abd11a;"><span class="pont">D</span> Volets</div>
+<div class="jumbotron">
+	<div class="head big text-center" style="background-color:#abd11a;"><%= image_tag("PONT.png", :alt =>  "Lainé Fermetures", width: '24') %> Volets</div>
+	<br>
+	<%= image_tag("bubendorff1.png", alt: "Bubendorff", class: 'center-block', height: '80') %>
 
-<%= image_tag("bubendorff1.png", alt: "Bubendorff", class: 'center-block', height: '80') %>
+	<section class="row pager">
+	    <%= link_to 'Toutes', fetch_shutters_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% @categories.each do |category| %>
+	      <%= link_to category.libelle, fetch_shutters_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% end %>
+	</section>
 
-<section class="row pager">
-    <%= link_to 'Toutes', fetch_shutters_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% @categories.each do |category| %>
-      <%= link_to category.libelle, fetch_shutters_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% end %>
-</section>
+	<hr>
 
-<hr>
-
-<div id="shutters" class="transitions-enabled infinite-scroll clearfix centered content">
-  <%= render partial: 'shutters', locals: { shutters: @shutters} %>
+	<div id="shutters" class="transitions-enabled infinite-scroll clearfix centered content">
+	  <%= render partial: 'shutters', locals: { shutters: @shutters} %>
+	</div>
 </div>

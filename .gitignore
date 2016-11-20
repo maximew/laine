@@ -39,7 +39,12 @@ app/models/contact.rb
 /conf/
 /config/database.yml
 /config/secrets.yml
+/config/application.yml
 Gemfile
 Gemfile.lock
 log/*
+*.log
+
+log/development.log
+
 *.log

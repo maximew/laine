@@ -19,18 +19,23 @@
 //= require masonry/jquery.masonry
 //= require masonry/modernizr-transitions
 //= require masonry/jquery.imagesloaded.min
+//= require jquery.slick
 //= require_tree .
 
 $(function() {
-	$('li.' + location.pathname.split('/')[1] + ' > a').addClass('active');
-	$('.active').parent().addClass('active'+ location.pathname.split('/')[1]);
-	$('.dropdown-menu').hover(
-	  function() {
-	    $(this).parent().addClass('activedoors');
-	    $('li.dropdown > a').addClass('doorsdropdown');
-	  }, function() {
-	    $(this).parent().removeClass('activedoors');
-	  	$('li.dropdown > a').removeClass('doorsdropdown');
-	  }
-	);
+	if (location.pathname.split('/')[1] != ""){
+	    $('li.' + location.pathname.split('/')[1] + ' > a').addClass('active');
+		$('.active').parent().addClass('active'+ location.pathname.split('/')[1]);
+		$('.dropdown-menu').hover(
+		  function() {
+		    $(this).parent().addClass('activedoors');
+		    $('li.dropdown > a').addClass('doorsdropdown');
+		  }, function() {
+		    $(this).parent().removeClass('activedoors');
+		  	$('li.dropdown > a').removeClass('doorsdropdown');
+		  }
+		);
+	}
+	
+	$('.slick').slick();
 });

@@ -66,7 +66,6 @@ class Admin::CategoriesController < ApplicationController
 
   def to_label
     "#{libelle}"
-
   end
 
   protected

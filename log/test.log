@@ -217,3 +217,86 @@ Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160111110927')
   [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160111110935')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "agendas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "startdate" date, "enddate" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "libelle" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "descriptions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "categ" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "doors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) 
+  [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX "index_doors_on_category_id" ON "doors" ("category_id")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "garages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_garages_on_category_id" ON "garages" ("category_id")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "portals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_portals_on_category_id" ON "portals" ("category_id")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "shutters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_shutters_on_category_id" ON "shutters" ("category_id")
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "stores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_stores_on_category_id" ON "stores" ("category_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "windows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image" varchar, "category_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_windows_on_category_id" ON "windows" ("category_id")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160826150723')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151220140448')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151220141806')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151220141850')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151220141919')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151220142029')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151220142050')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151220142201')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160111110810')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160111110858')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160111110907')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160111110918')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160111110927')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160111110935')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "agendas"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "agendas" ("title", "content", "startdate", "enddate", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2016-08-26', '2016-08-26', '2016-08-26 15:52:59', '2016-08-26 15:52:59', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "agendas" ("title", "content", "startdate", "enddate", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', '2016-08-26', '2016-08-26', '2016-08-26 15:52:59', '2016-08-26 15:52:59', 298486374)[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+AgendasControllerTest: test_should_create_agenda
+------------------------------------------------
+  [1m[35mAgenda Load (0.4ms)[0m  SELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "agendas"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+AgendasControllerTest: test_should_destroy_agenda
+-------------------------------------------------
+  [1m[35mAgenda Load (0.1ms)[0m  SELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "agendas"[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+AgendasControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[35mAgenda Load (0.1ms)[0m  SELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+--------------------------------------------
+AgendasControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mAgenda Load (0.0ms)[0m  [1mSELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+AgendasControllerTest: test_should_get_new
+------------------------------------------
+  [1m[35mAgenda Load (0.0ms)[0m  SELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------
+AgendasControllerTest: test_should_show_agenda
+----------------------------------------------
+  [1m[36mAgenda Load (0.0ms)[0m  [1mSELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+AgendasControllerTest: test_should_update_agenda
+------------------------------------------------
+  [1m[35mAgenda Load (0.0ms)[0m  SELECT  "agendas".* FROM "agendas" WHERE "agendas"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m

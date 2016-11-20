@@ -11,12 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116001506) do
+ActiveRecord::Schema.define(version: 20160826150723) do
+
+  create_table "agendas", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.date     "startdate"
+    t.date     "enddate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "libelle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "descriptions", force: :cascade do |t|
+    t.string   "categ"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "doors", force: :cascade do |t|
@@ -57,24 +73,6 @@ ActiveRecord::Schema.define(version: 20160116001506) do
   end
 
   add_index "portals", ["category_id"], name: "index_portals_on_category_id"
-
-  create_table "portes", force: :cascade do |t|
-    t.string   "image"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "portes", ["category_id"], name: "index_portes_on_category_id"
-
-  create_table "ps", force: :cascade do |t|
-    t.string   "images"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "ps", ["category_id"], name: "index_ps_on_category_id"
 
   create_table "shutters", force: :cascade do |t|
     t.string   "image"
