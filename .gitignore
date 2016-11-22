@@ -48,3 +48,5 @@ log/*
 log/development.log
 
 *.log
+
+*.log

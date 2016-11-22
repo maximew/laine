@@ -4,7 +4,7 @@
   <hr>
   <div id="contact">
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <address class="text-center">
           <h2 class="bleu glyphicon glyphicon-pushpin"></h2><br>
           <strong>Adresse</strong><br>
@@ -12,7 +12,7 @@
           Amiens, 80 000<br>
         </address>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <address class="text-center">
           <h2 class="rouge glyphicon glyphicon-earphone"></h2><br>
           <strong>Téléphone</strong>
@@ -20,7 +20,7 @@
           <a href="tel:0322955685">03.22.95.56.85</a>
         </address>
       </div>
-      <div class="col-xs-4">
+      <div class="col-md-4">
         <address class="text-center">
           <h2 class="vert glyphicon glyphicon-envelope"></h2><br>
           <strong>Mail</strong>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <h3 class="text-center">Contactez-nous</h3>
 
         <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
@@ -49,21 +49,26 @@
         <% end %>
       </div>
 
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <h3 class="text-center">Situez-nous</h3>
         
-        <div style='width: 800px;'>
+        <div class="col-md-6">
           <div id="map" style='width: 500px; height: 400px;'></div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
-  var mapCanvas = document.getElementById("map");
-  var mapOptions = {
-      center: new google.maps.LatLng(49.891334, 2.283888), zoom: 18, scrollwheel: false
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 49.891334, lng: 2.283888},
+      scrollwheel: false,
+      zoom: 18
+    });
   }
-  var map = new google.maps.Map(mapCanvas, mapOptions);
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn6gN1iKm0G4I9wseJZo_iX7o4d_hlVU4&callback=initMap" async defer>
 </script>
