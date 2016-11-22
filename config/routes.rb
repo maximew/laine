@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :portals, only: [ :index ]
   resources :windows, only: [ :index ]
   resources :categories, only: [ :index ]
+  resources :agendas, only: [ :index ]
 
   get 'pages/home'
   match '/contacts', to: 'contacts#new', via: 'get'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
     resources :portals
     resources :windows
     resources :categories
+    resources :agendas
   end
 
 

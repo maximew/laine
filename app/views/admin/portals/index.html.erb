@@ -1,26 +1,28 @@
-<h1 class="text-center">Portails</h1>
+<div class="jumbotron text-center">
+	<h1 class="text-center">Portails</h1>
 
-<%= render 'admin/links' %>
+	<%= render 'admin/links' %>
 
-<hr>
+	<hr>
 
-<%= link_to 'Nouveau portail', new_admin_portal_path, class: 'btn btn-lg btn-success center-block' %>
+	<%= link_to 'Nouveau portail', new_admin_portal_path, class: 'btn btn-lg btn-success center-block' %>
 
-<% @portals.each do |portal| %>
-	<div class="media">
-	  <div class="media-left">
-	      <%= image_tag portal.image.url(:small) %>
-	  </div>
-	  <div class="media-body">
-	  	<h2><%= portal.category.libelle %></h2>
-	  	<table class="table">
-		  	<tr>
-	        	<td><%= link_to 'Modifier', edit_admin_portal_path(portal), class: 'btn btn-default' %></td>
-	        	<td><%= link_to 'Supprimer', admin_portal_path(portal), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-        	</tr>
-	  	</table>
-	    
-		
-	  </div>
-	</div>
-<% end %>
+	<% @portals.each do |portal| %>
+		<div class="media">
+		  <div class="media-left">
+		      <%= image_tag portal.image.url(:small) %>
+		  </div>
+		  <div class="media-body">
+		  	<h2><%= portal.category.libelle %></h2>
+		  	<table class="table">
+			  	<tr>
+		        	<td><%= link_to 'Modifier', edit_admin_portal_path(portal), class: 'btn btn-default' %></td>
+		        	<td><%= link_to 'Supprimer', admin_portal_path(portal), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+	        	</tr>
+		  	</table>
+		    
+			
+		  </div>
+		</div>
+	<% end %>
+</div>

@@ -1,14 +1,16 @@
-<div class="head big text-center" style="background-color:#e5e515;"><span class="pont">D</span> Stores</div>
+<div class="jumbotron">
+	<div class="head big text-center" style="background-color:#e5e515;"><%= image_tag("PONT.png", :alt =>  "Lainé Fermetures", width: '24') %> Stores</div>
 
-<section class="row pager">
-    <%= link_to 'Toutes', fetch_stores_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% @categories.each do |category| %>
-      <%= link_to category.libelle, fetch_stores_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% end %>
-</section>
+	<section class="row pager">
+	    <%= link_to 'Toutes', fetch_stores_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% @categories.each do |category| %>
+	      <%= link_to category.libelle, fetch_stores_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% end %>
+	</section>
 
-<hr>
+	<hr>
 
-<div id="stores" class="transitions-enabled infinite-scroll clearfix centered content">
-  <%= render partial: 'stores', locals: { stores: @stores} %>
+	<div id="stores" class="transitions-enabled infinite-scroll clearfix centered content">
+	  <%= render partial: 'stores', locals: { stores: @stores} %>
+	</div>
 </div>

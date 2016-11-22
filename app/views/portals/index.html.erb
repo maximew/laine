@@ -1,14 +1,16 @@
-<div class="head big text-center" style="background-color:#d40015;"><span class="pont">D</span> Portails</div>
+<div class="jumbotron">
+	<div class="head big text-center" style="background-color:#d40015;"><%= image_tag("PONT.png", :alt =>  "Lainé Fermetures", width: '24') %> Portails</div>
 
-<section class="row pager">
-    <%= link_to 'Toutes', fetch_portals_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% @categories.each do |category| %>
-      <%= link_to category.libelle, fetch_portals_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% end %>
-</section>
+	<section class="row pager">
+	    <%= link_to 'Toutes', fetch_portals_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% @categories.each do |category| %>
+	      <%= link_to category.libelle, fetch_portals_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% end %>
+	</section>
 
-<hr>
+	<hr>
 
-<div id="portals" class="transitions-enabled infinite-scroll clearfix centered content">
-  <%= render partial: 'portals', locals: { portals: @portals} %>
+	<div id="portals" class="transitions-enabled infinite-scroll clearfix centered content">
+	  <%= render partial: 'portals', locals: { portals: @portals} %>
+	</div>
 </div>

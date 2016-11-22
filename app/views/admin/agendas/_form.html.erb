@@ -1,0 +1,20 @@
+<%= simple_form_for([:admin,@agenda]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.text_area :content, :class => "tinymce" %>
+    <%= f.input :startdate %>
+    <%= f.input :enddate %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour', admin_agendas_path %>
+
+<%= tinymce %>
+<%= tinymce_assets %>
+<script type="text/javascript" src="/assets/tinymce.js">

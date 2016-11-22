@@ -1,27 +1,27 @@
-<h1 class="pager">Catégories</h1>
+<div class="jumbotron text-center">
+  <h1 class="pager">Catégories</h1>
 
-<%= render 'admin/links' %>
+  <%= render 'admin/links' %>
 
-<hr>
+  <hr>
 
-<%= link_to 'Ajouter une catégorie', new_admin_category_path, class: 'btn btn-lg btn-success center-block' %>
+  <%= link_to 'Ajouter une catégorie', new_admin_category_path, class: 'btn btn-lg btn-success center-block' %>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Libelle</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= category.libelle %></td>
-        <td class="pager"><%= link_to 'Modifier', edit_admin_category_path(category), class: 'btn btn-xs btn-default' %></td>
-        <td class="pager"><%= link_to 'Supprimer', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
+        <th>Libelle</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.libelle %></td>
+          <td class="pager"><%= link_to 'Modifier', edit_admin_category_path(category), class: 'btn btn-xs btn-default' %></td>
+          <td class="pager"><%= link_to 'Supprimer', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

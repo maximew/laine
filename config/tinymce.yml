@@ -1,0 +1,14 @@
+toolbar:
+  - formatselect | fontselect | fontsizeselect | bold | italic | underline | strikethrough | alignleft | aligncenter | alignjustify | alignright
+plugins:
+  - link
+  - paste
+  - importcss
+  - autolink
+  - lists
+  - wordcount
+  - colorpicker
+  - hr
+  - preview
+  - searchreplace
+  - textcolor

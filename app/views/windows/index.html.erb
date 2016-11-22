@@ -1,14 +1,16 @@
-<div class="head big text-center" style="background-color:#0c49a6;"><span class="pont">D</span> Fenêtres</div>
+<div class="jumbotron">
+	<div class="head big text-center" style="background-color:#0c49a6;"><%= image_tag("PONT.png", :alt =>  "Lainé Fermetures", width: '24') %> Fenêtres</div>
 
-<section class="row pager">
-    <%= link_to 'Toutes', fetch_windows_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% @categories.each do |category| %>
-      <%= link_to category.libelle, fetch_windows_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
-    <% end %>
-</section>
+	<section class="row pager">
+	    <%= link_to 'Toutes', fetch_windows_items_path(:categ => nil), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% @categories.each do |category| %>
+	      <%= link_to category.libelle, fetch_windows_items_path(:categ => category.id), :remote => true, :class => 'btn btn-xs btn-gray' %>
+	    <% end %>
+	</section>
 
-<hr>
+	<hr>
 
-<div id="windows" class="transitions-enabled infinite-scroll clearfix centered content">
-  <%= render partial: 'windows', locals: { windows: @windows} %>
+	<div id="windows" class="transitions-enabled infinite-scroll clearfix centered content">
+	  <%= render partial: 'windows', locals: { windows: @windows} %>
+	</div>
 </div>
