@@ -1,4 +1,4 @@
-@import 'bootstrap-sprockets';
+@import "bootstrap-sprockets";
 @import 'bootstrap';
 @import 'masonry/centered';
 @import 'masonry/fluid';
@@ -176,6 +176,9 @@ li.dropdown:hover .dropdown-menu{display:block;border-radius: 6px;}
 
 	.contacts{
 		padding-top: 16px !important;
+	}
+	#accueil > div > img {
+		width: 100%;
 	}
 }
 

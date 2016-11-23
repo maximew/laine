@@ -29,8 +29,6 @@ module Laine
 
     #Use personnal fonts
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
-
-    #TinyMCE
-    config.tinymce.install = :copy
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 end

@@ -3,8 +3,8 @@ class CreateAgendas < ActiveRecord::Migration
     create_table :agendas do |t|
       t.string :title
       t.text :content
-      t.startdate :date
-      t.enddate :date
+      t.date :startdate
+      t.date :enddate
 
       t.timestamps null: false
     end

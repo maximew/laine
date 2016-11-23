@@ -44,9 +44,5 @@ Gemfile
 Gemfile.lock
 log/*
 *.log
-
 log/development.log
-
-*.log
-
-*.log
+public/assets/*
